@@ -1,4 +1,5 @@
 module.exports = {
     url: "amqp://localhost",
-    exchange: 'log'
+    exchange: 'log',
+    work_queue: 'log-tasks'
 }
