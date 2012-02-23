@@ -1,10 +1,10 @@
 {schema,
   [
    {version, "0.1"},
-   {default_field, "originalMessage"},
+   {default_field, "message"},
    {default_op, "or"},
    {n_val, 3},
-   {analyzer_factory, {erlang, text_analyzers, noop_analyzer_factory}}
+   {analyzer_factory, {erlang, text_analyzers, standard_analyzer_factory}}
   ],
   [
    {field, [{name, "id"},
@@ -12,21 +12,21 @@
    {field, [{name, "originalMessage"},
             {required, true},
             {analyzer_factory, {erlang, text_analyzers, whitespace_analyzer_factory}}]},
-   {field, [{name, "facility"}]},
-   {field, [{name, "severity"}]},
+   {field, [{name, "facility"}, {analyzer_factory, {erlang, text_analyzers, standard_analyzer_factory}} ]},
    {field, [{name, "version"}]},
-   {field, [{name, "host"}]},
+   {field, [{name, "host"},
+              {analyzer_factory, {erlang, text_analyzers, standard_analyzer_factory}} ]},
    {field, [{name, "src"}]},
    {field, [{name, "dst"}]},
-   {field, [{name, "severity"}]},
    {field, [{name, "class"}]},
    {field, [{name, "sensor"}]},
    {field, [{name, "date"},
-	   {type, integer}]},
+	   {type, integer},
+                       {analyzer_factory, {erlang, text_analyzers, integer_analyzer_factory}} ]},
    {field, [{name, "time"},
             {type, date}]},
    {field, [{name, "message"},
-            {analyzer_factory, {erlang, text_analyzers, whitespace_analyzer_factory}}]},
+            {analyzer_factory, {erlang, text_analyzers, standard_analyzer_factory}}]},
    % Skip anything we don't care about
    {dynamic_field, [{name, "*"},
                     {skip, true}]}
