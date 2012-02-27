@@ -6,8 +6,8 @@
 "dependencies":{
   "riak-js":">=0.3.6",
   "glossy":">=0.0.2",
-    "amqp":">= 0.1.0",
+    "amqp":"",
   "ejs":"",
-  "express":"2.0.0beta3"
+  "express":""
 }
 }
