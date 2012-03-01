@@ -16,6 +16,8 @@
    {field, [{name, "version"}]},
    {field, [{name, "host"},
               {analyzer_factory, {erlang, text_analyzers, standard_analyzer_factory}} ]},
+   {field, [{name, "origin"},
+              {analyzer_factory, {erlang, text_analyzers, standard_analyzer_factory}} ]},
    {field, [{name, "src"}]},
    {field, [{name, "dst"}]},
    {field, [{name, "class"}]},
