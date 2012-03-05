@@ -30,7 +30,7 @@
                        {analyzer_factory, {erlang, text_analyzers, integer_analyzer_factory}} ]},
    {field, [{name, "time"},
             {type, date}]},
-   {field, [{name, "message"},
+   {field, [{name, "message"}, {inline, true},
             {analyzer_factory, {erlang, text_analyzers, standard_analyzer_factory}}]},
    % Skip anything we don't care about
    {dynamic_field, [{name, "*"},
