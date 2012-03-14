@@ -6,9 +6,10 @@
 "dependencies":{
   "riak-js":">=0.3.6",
   "glossy":">=0.0.2",
-    "amqp":"",
+    "amqp":"0.0.2",
   "ejs":"",
   "express":"",
-  "iconv":""
+  "iconv":"",
+  "glob-trie.js":""
 }
 }
