@@ -43,7 +43,7 @@
    <field name="type" type="string"  indexed="false" stored="false" />
    <field name="sensor" type="string"  indexed="true" stored="true" />
    <field name="date" type="tlong"  indexed="true" stored="true" />
-   <field name="severity" type="tint"  indexed="true" stored="true" />
+   <field name="severity" type="string"  indexed="true" stored="true" />
    <field name="severityID" type="tint"  indexed="true" stored="true" />
    <field name="facility" type="string"  indexed="true" stored="true" />
    <field name="facilityID" type="tint"  indexed="true" stored="true" />
