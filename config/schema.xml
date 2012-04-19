@@ -3,6 +3,7 @@
 <schema name="everlog" version="1.2">
 
   <types>
+    <fieldType name="boolean" class="solr.BoolField" sortMissingLast="true" omitNorms="true"/>
     <fieldType name="int" class="solr.TrieIntField" precisionStep="0" omitNorms="true" positionIncrementGap="0"/>
     <fieldType name="tlong" class="solr.TrieLongField" precisionStep="8" omitNorms="true" positionIncrementGap="0"/>
     <fieldType name="tint" class="solr.TrieIntField" precisionStep="8" omitNorms="true" positionIncrementGap="0"/>
@@ -33,6 +34,11 @@
 
  <fields>
    <field name="id" type="string" indexed="true" stored="true" default="NEW"/>
+   <field name="alert" type="boolean" indexed="true" stored="true" default="false"/>
+   <field name="classify" type="string" multiValued="true" indexed="true" stored="true" default="false"/>
+   <field name="ref" type="string" multiValued="true" indexed="true" stored="true" default="false"/>
+   <field name="note" type="string" multiValued="true" indexed="true" stored="true" default="false"/>
+   <field name="status" type="string"  indexed="true" stored="true" default="false"/>
    <field name="originalMessage" type="string"  indexed="true" stored="true" />
    <field name="origin" type="string"  indexed="true" stored="true" />
    <field name="host" type="string"  indexed="true" stored="true" />
