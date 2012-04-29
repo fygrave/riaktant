@@ -55,6 +55,7 @@
    <field name="facilityID" type="tint"  indexed="true" stored="true" />
    <field name="tag" type="lowercase"  indexed="true" stored="true" />
    <field name="program" type="lowercase"  indexed="true" stored="true" />
+   <field name="protocol" type="lowercase"  indexed="true" stored="true" />
    <field name="priority" type="tint" indexed="true" stored="true" />
    <field name="prival" type="tint" indexed="true" stored="true" />
    <field name="message" type="text" indexed="true" stored="true" compressed="true" />
