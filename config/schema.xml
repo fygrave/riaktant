@@ -34,11 +34,11 @@
 
  <fields>
    <field name="id" type="string" indexed="true" stored="true" default="NEW"/>
-   <field name="alert" type="boolean" indexed="true" stored="true" default="false"/>
-   <field name="classify" type="string" multiValued="true" indexed="true" stored="true" default="false"/>
-   <field name="ref" type="string" multiValued="true" indexed="true" stored="true" default="false"/>
-   <field name="note" type="string" multiValued="true" indexed="true" stored="true" default="false"/>
-   <field name="status" type="string"  indexed="true" stored="true" default="false"/>
+   <field name="alert" type="boolean" indexed="true" stored="true"/>
+   <field name="classify" type="string" multiValued="true" indexed="true" stored="true"/>
+   <field name="ref" type="string" multiValued="true" indexed="true" stored="true"/>
+   <field name="note" type="string" multiValued="true" indexed="true" stored="true"/>
+   <field name="status" type="string"  indexed="true" stored="true"/>
    <field name="originalMessage" type="string"  indexed="true" stored="true" />
    <field name="origin" type="string"  indexed="true" stored="true" />
    <field name="host" type="string"  indexed="true" stored="true" />
