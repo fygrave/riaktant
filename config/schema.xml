@@ -63,6 +63,7 @@
    <field name="text" type="text" indexed="true" stored="false" multiValued="true"/>
    <field name="timestamp" type="tdate" indexed="true" stored="true" default="NOW" multiValued="false"/>
    <field name="time" type="tdate" indexed="true" stored="true" default="NOW" multiValued="false"/>
+   <dynamicField name="*" type="string" indexed="true" stored="true" compressed="true" />
  </fields>
 
  <uniqueKey>id</uniqueKey>
