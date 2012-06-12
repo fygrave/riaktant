@@ -21,3 +21,6 @@
    6) Feed some data into the syslog server: =node lib/syslog/producer.js=
    7) Search it from the web application: =http://localhost:8001/=
 
+** CEP Engine
+
+CEP engine is build in java using Esper and available at [[https://github.com/fygrave/ceplog]][[CEPLog Repository]].
