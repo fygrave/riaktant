@@ -1,10 +1,15 @@
 * riaktant
 ** Overview
-   This is a sample application that stores syslog messages in [[https://github.com/basho/riak_search][Riak
+   This is a heavily modified version of a sample application that stores syslog messages in [[https://github.com/basho/riak_search][Riak
    Search]], using [[https://github.com/frank06/riak-js][riak-js]].
 
    Originally created by [[mailto:mathias@basho.com][Mathias Meyer]] and [[mailto:sean@basho.com][Sean Cribbs]] for the "Riak
    with node.js" Basho webinar, March 15, 2011.
+
+** Differences
+
+   Actual data is stored in apache/solr for speed. Parsing. CEP engine support. Rabbit MQ intergation.
+
 ** Install & Run
    1) =npm bundle= (installs dependencies)
    2) Copy =config/riak.js.example= to =config/riak.js= and tweak to
