@@ -2,4 +2,9 @@ module.exports = {
     host: "127.0.0.1",
     port: 8098,
     api: 'http',
+   nodeid: 'testLogger2',
+   solr_params: {shards: "127.0.0.1:8983/solr"},
+   syslog_port: 514,
+   splunk_port: 9998
+
 }
