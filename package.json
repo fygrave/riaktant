@@ -7,7 +7,7 @@
   "riak-js":">=0.3.6",
   "glossy":">=0.0.2",
     "amqp":"0.0.2",
-    "node-solr": "https://github.com/gsf/node-solr.git",
+    "solr": "",
   "ejs":"",
   "express":"",
   "iconv":"",
