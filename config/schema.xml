@@ -33,7 +33,7 @@
  </types>
 
  <fields>
-   <field name="id" type="string" indexed="true" stored="true" default="NEW"/>
+   <field name="id" type="string" indexed="true" stored="true"/>
    <field name="alert" type="boolean" indexed="true" stored="true"/>
    <field name="classify" type="string" multiValued="true" indexed="true" stored="true"/>
    <field name="ref" type="string" multiValued="true" indexed="true" stored="true"/>
