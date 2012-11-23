@@ -33,7 +33,7 @@
  </types>
 
  <fields>
-   <field name="id" type="string" indexed="true" stored="true" default="NEW"/>
+   <field name="id" type="string" indexed="true" stored="true"/>
    <field name="alert" type="boolean" indexed="true" stored="true"/>
    <field name="classify" type="string" multiValued="true" indexed="true" stored="true"/>
    <field name="ref" type="string" multiValued="true" indexed="true" stored="true"/>
@@ -63,6 +63,7 @@
    <field name="text" type="text" indexed="true" stored="false" multiValued="true"/>
    <field name="timestamp" type="tdate" indexed="true" stored="true" default="NOW" multiValued="false"/>
    <field name="time" type="tdate" indexed="true" stored="true" default="NOW" multiValued="false"/>
+   <dynamicField name="*_i" type="tint" indexed="true" stored="true" compressed="true" />
    <dynamicField name="*" type="string" indexed="true" stored="true" compressed="true" />
  </fields>
 
