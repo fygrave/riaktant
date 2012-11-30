@@ -1,9 +1,9 @@
 #!/bin/sh
 
-curl riak
-curl rabbitmq
-curl solr
+curl http://downloads.basho.com.s3-website-us-east-1.amazonaws.com/riak/CURRENT/debian/6/riak_1.2.1-1_amd64.deb -o riak_1.2.1-1_amd64.deb
 curl http://www.rabbitmq.com/releases/rabbitmq-server/v2.8.4/rabbitmq-server_2.8.4-1_all.deb -o rabbitmq-server_2.8.4-1_all.deb
+curl wget http://ftp.mirror.tw/pub/apache/lucene/solr/4.0.0/apache-solr-4.0.0.tgz -o apache-solr-4.0.0.tgz
+tar xvfz apache-solr-4.0.0.tgz
 #wget http://nodejs.org/dist/v0.8.4/node-v0.8.4.tar.gz
 #tar xvfz node-v0.8.4.tar.gz
 #cd node-v0.8.4
@@ -23,7 +23,7 @@ apt-get install libssl0.9.8
 apt-get install munin munin-node
 pecl install -n solr
 apt-get -f install
-dpkg -i riak_1.1.2-1_amd64.deb
+dpkg -i riak_1..2.1-1_amd64.deb
 tar xvfz node-v0.6.18.tar.gz
 cd node-v0.6.18/
 ./configure && make && make install && supervisorctl restart all
@@ -34,3 +34,4 @@ npm install forever -g
 git clone http://github.com/fygrave/riaktant.git
 cd riaktant
 npm install
+cp riaktant/config/schema.xml apache-solr-4.0.0/example/solr/collection1/conf/
