@@ -63,7 +63,9 @@
    <field name="text" type="text" indexed="true" stored="false" multiValued="true"/>
    <field name="timestamp" type="tdate" indexed="true" stored="true" default="NOW" multiValued="false"/>
    <field name="time" type="tdate" indexed="true" stored="true" default="NOW" multiValued="false"/>
-   <dynamicField name="*" type="string" indexed="true" stored="true" compressed="true" />
+   <dynamicField name="*_i" type="tlong" indexed="true" stored="true" compressed="false" />
+   <dynamicField name="*_d" type="tdate" indexed="true" stored="true" compressed="false" />
+   <dynamicField name="*" type="string" indexed="true" stored="true" compressed="false" />
  </fields>
 
  <uniqueKey>id</uniqueKey>
