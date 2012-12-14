@@ -25,7 +25,7 @@ apt-get install munin munin-node
 pecl install -n solr
 apt-get -f install
 dpkg -i riak_1..2.1-1_amd64.deb
-[ -f node-v0.6.18.tar.gz ] || wget http://nodejs.org/dist/v0.8.4/node-v0.6.18.tar.gz
+[ -f node-v0.6.18.tar.gz ] || wget http://nodejs.org/dist/v0.6.18/node-v0.6.18.tar.gz
 tar xvfz node-v0.6.18.tar.gz
 cd node-v0.6.18/
 ./configure && make && make install && supervisorctl restart all
