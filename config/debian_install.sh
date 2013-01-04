@@ -13,7 +13,8 @@ tar xvfz apache-solr-4.0.0.tgz
 #./configure
 #make
 #make install
-apt-get -y install build-essential openjdk-6-jdk  libssl-dev pkg-config curl libcurl4-openssl-dev php5-curl php-pear php5-memcache memcached supervisor git
+apt-get -y install apache2
+apt-get -y install build-essential openjdk-6-jdk  apache2 libssl-dev pkg-config curl libcurl4-openssl-dev php5-curl php-pear php5-memcache memcached supervisor git
 apt-get -y install erlang-nox
 apt-get -y install erlang-base
 apt-get -y install php-pear
