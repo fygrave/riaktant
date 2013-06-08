@@ -1,6 +1,6 @@
 #!/bin/sh
 
-SOLRV="4.2.1"
+SOLRV="4.3.0"
 RIAKV="1.2.1-1"
 apt-get -y install shorewall
 apt-get -y install openvpn
@@ -35,7 +35,7 @@ pip install graphite-web warden
 pip install carbon
 pip install whisper
 
-[ -f elasticsearch-0.20.6.tar.gz ] || wget https://download.elasticsearch.org/elasticsearch/elasticsearch/elasticsearch-0.20.6.tar.gz
+[ -f elasticsearch-0.90.1.tar.gz ] || wget https://download.elasticsearch.org/elasticsearch/elasticsearch/elasticsearch-0.90.1.tar.gz
 
 [ -f node-v0.8.16.tar.gz ] || wget http://nodejs.org/dist/v0.8.16/node-v0.8.16.tar.gz
 tar xvfz node-v0.8.16.tar.gz
