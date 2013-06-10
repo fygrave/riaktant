@@ -25,15 +25,13 @@ apt-get -y install libssl0.9.8
 apt-get -y install libssl0.9.8
 apt-get -y install munin munin-node
 apt-get -y install python-pip
+apt-get -y install python-dev
 pecl install -n solr
 apt-get -y -f install
 dpkg -i riak_"$RIAKV"_amd64.deb
 #[ -f node-v0.6.18.tar.gz ] || wget http://nodejs.org/dist/v0.6.18/node-v0.6.18.tar.gz
 #tar xvfz node-v0.6.18.tar.gz
 #cd node-v0.6.18/
-pip install graphite-web warden
-pip install carbon
-pip install whisper
 
 [ -f elasticsearch-0.90.1.tar.gz ] || wget https://download.elasticsearch.org/elasticsearch/elasticsearch/elasticsearch-0.90.1.tar.gz
 
@@ -56,6 +54,9 @@ cp riaktant/config/supervisor_master.conf /etc/supervisor/conf.d/
 /etc/init.d/rabbitmq-server restart
 killall supervisord
 /etc/init.d/supervisor restart
+
+./debian_install_graphite.sh
+
 mv /etc/riak/app.config /etc/riak/app.config.bk && sed -e 's/riak_kv_bitcask_backend/riak_kv_eleveldb_backend/' /etc/riak/app.config.bk  > /etc/riak/app.config
 MYIP=`/sbin/ifconfig eth0 | grep "inet addr" | awk -F: '{print $2}' | awk '{print $1}'`
 echo $MYIP
