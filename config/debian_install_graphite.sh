@@ -2,7 +2,7 @@
 
 # statsd + graphite
 apt-get install python-dev python-pip
-apt-get install libapache2-mod-uwsgi
+apt-get install libapache2-mod-wsgi
 git clone https://github.com/etsy/statsd.git
 pip install graphite-web pip install  pytz python-pyparsing tagging python-memcache ldap python-rrdtool
 pip install warden
@@ -19,6 +19,7 @@ echo '
 , backends: [ "./backends/graphite" ]
 }
 ' >> statsd/everlog.js
+cd statsd && npm install
 
 echo '
 [program:statsd]
