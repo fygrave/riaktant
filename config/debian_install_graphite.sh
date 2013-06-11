@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # statsd + graphite
-apt-get install python-dev python-pip
+apt-get install python-dev python-pip python-cairo
 apt-get install libapache2-mod-wsgi
 git clone https://github.com/etsy/statsd.git
 pip install graphite-web pip install  pytz python-pyparsing tagging python-memcache ldap python-rrdtool
@@ -24,7 +24,7 @@ cd statsd && npm install
 echo '
 [program:statsd]
 directory=/root/statsd/
-command = node statsd.js everlog.js
+command = node stats.js everlog.js
 autostart = true
 autorestart = true
 ' >> /etc/supervisor/conf.d/statsd.conf
@@ -47,6 +47,18 @@ retentions = 60:90d
 pattern = .*
 retentions = 60s:395d
 ' > /opt/graphite/conf/storage-schemas.conf
+cp /opt/graphite/conf/graphite.wsgi.example /opt/graphite/conf/graphite.wsgi
+
+
+cd /opt/graphite/webapp/graphite/
+sudo python manage.py syncdb
+sudo chown -R www-data:www-data /opt/graphite/storage/
+cd /opt/graphite/webapp/graphite
+sudo cp local_settings.py.example local_settings.py
+ 
+cd /opt/graphite/
+sudo ./bin/carbon-cache.py start
+
 /etc/init.d/apache2 restart
 
 
