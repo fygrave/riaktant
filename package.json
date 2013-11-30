@@ -13,6 +13,6 @@
   "express":"",
   "iconv":"",
   "glob-trie.js":"",
-  "elasticsearch-client":""
+  "elasticsearchclient":""
 }
 }
