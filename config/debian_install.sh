@@ -1,7 +1,7 @@
 #!/bin/sh
 
 SOLRV="4.3.0"
-RIAKV="1.2.1-1"
+RIAKV="1.3.1-1"
 apt-get -y install shorewall
 apt-get -y install openvpn
 apt-get -y install curl build-essential

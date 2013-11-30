@@ -12,6 +12,7 @@
   "ejs":"",
   "express":"",
   "iconv":"",
-  "glob-trie.js":""
+  "glob-trie.js":"",
+  "elasticsearch-client":""
 }
 }
