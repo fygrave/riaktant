@@ -30,10 +30,10 @@ conn.create_index('everlog_parser')
 conn.put_mapping("everlog_parser-type", {'properties':mapping}, 'everlog_parser')
 for ln in f:
 	ln=ln[0:len(ln) - 1]
-    if (ln.find('===>') > 0:
-        key = ln[0:ln.find('===>')]
-        val =ln[ln.find('===>')+4:len(ln)]
-        conn.index({"type": key, "rule": val}, "everlog_parser", "everlog_parser-type")
+	if ln.find('===>') > 0:
+		key = ln[0:ln.find('===>')]
+		val =ln[ln.find('===>')+4:len(ln)]
+		conn.index({"type": key, "rule": val}, "everlog_parser", "everlog_parser-type")
 
 #conn.put_mapping("malwr-type", {'properties':mapping}, [getindex()])
 #conn.put_mapping(doc_type="searchindex-type", mapping = mapping, indices=[getindex()])
