@@ -6,13 +6,12 @@
 "dependencies":{
  "riak-js":">=0.3.6",
  "glossy":">=0.0.2",
-  "amqp":"",
-  "zookeeper":"",
-  "solr": "",
   "ejs":"",
   "express":"",
+  "zmq":"",
   "iconv":"",
   "glob-trie.js":"",
-  "elasticsearchclient":""
+  "elasticsearchclient":"",
+  "xregexp":""
 }
 }

@@ -13,11 +13,12 @@ import sys
 print sys.argv[1]
 conn = ES([sys.argv[1]])
 #reclient = redis.Redis(host='localhost', port=6833)
-number_of_nodes = pyes.cluster_nodes()
+number_of_nodes = len(conn.cluster_nodes()["nodes"])
 
+print number_of_nodes
 mapping = {'searchindex-type' : {
     "_all": { "enabled" : False},
-    "dynamic": "strict",
+#    "dynamic": "",
 
 #           u'_id': { 'path': u'md5' },
 	"dynamic_templates": [
@@ -178,7 +179,7 @@ template= { "template": "searchindex*",
         "mappings": mapping
         }
 conn._send_request(method='PUT', path='/_template/template1/', body=template)
-conn.index({"originalMessage": "test"}, "searchindex-2233", "searchindex-type")
+#conn.index({"originalMessage": "test"}, "searchindex-2233", "searchindex-type")
 
 #conn.put_mapping("malwr-type", {'properties':mapping}, [getindex()])
 #conn.put_mapping(doc_type="searchindex-type", mapping = mapping, indices=[getindex()])
