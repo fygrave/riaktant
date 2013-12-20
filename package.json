@@ -12,6 +12,7 @@
   "iconv":"",
   "glob-trie.js":"",
   "elasticsearchclient":"",
+  "when":"",
   "xregexp":""
 }
 }
