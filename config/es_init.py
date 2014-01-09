@@ -161,10 +161,10 @@ mapping = {'searchindex-type' : {
 template= { "template": "searchindex*",
         "settings": {
             "index": {
-                "routing.allocation.total_shards_per_node": 1,
+                "routing.allocation.total_shards_per_node": 3,
                   "refresh_interval": 60,
                   "number_of_shards": number_of_nodes,
-                  "number_of_replicas": 0,
+                  "number_of_replicas": 1,
           "analysis": {
             "analyzer" : {
           "log_analyzer" : {
