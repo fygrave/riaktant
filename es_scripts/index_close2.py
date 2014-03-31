@@ -36,16 +36,18 @@ def getdateindex(date):
     return index_name
 #reclient = redis.Redis(host='localhost', port=6833)
 
-start=datetime.datetime.now() - timedelta(55 )
-end = datetime.datetime.now() - timedelta(30)
+start=datetime.datetime.now() - timedelta(int(sys.argv[3]))
+end = datetime.datetime.now() - timedelta(int(sys.argv[4]))
 for f in daterange(start, end):
-	for h in range(0, 23):
+	for h in range(0, 24):
 		d2 = datetime.datetime(f.year, f.month, f.day, h, 00, 00)
 		print getdateindex(d2)
 		try:
-			conn.delete_alias("searchindex", indices = [getdateindex(d2)])
-			conn.close_index(getdateindex(d2))
-			time.sleep(int(sys.argv[2]))
+                    s = conn.status(indices=[getdateindex(d2)])
+                    if len(s['indices'])!= 0:
+                        conn.delete_alias("searchindex", indices = [getdateindex(d2)])
+                        conn.close_index(getdateindex(d2))
+                        time.sleep(int(sys.argv[2]))
 		except Exception, e:
 			print e
 
