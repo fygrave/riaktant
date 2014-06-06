@@ -13,7 +13,7 @@ import sys
 print sys.argv[1]
 conn = ES([sys.argv[1]])
 #reclient = redis.Redis(host='localhost', port=6833)
-number_of_nodes = len(conn.cluster_nodes()["nodes"])
+number_of_nodes = len(conn.cluster_nodes()["nodes"]) - 1
 
 print number_of_nodes
 mapping = {'searchindex-type' : {
@@ -161,10 +161,10 @@ mapping = {'searchindex-type' : {
 template= { "template": "searchindex*",
         "settings": {
             "index": {
-                "routing.allocation.total_shards_per_node": 3,
-                  "refresh_interval": 60,
+                "routing.allocation.total_shards_per_node": 2,
+                  "refresh_interval": -1,
                   "number_of_shards": number_of_nodes,
-                  "number_of_replicas": 1,
+                  "number_of_replicas": 0,
           "analysis": {
             "analyzer" : {
           "log_analyzer" : {
