@@ -1,0 +1,4 @@
+02 * * * * /opt/riaktant/config/es_daily.py localhost:9200
+10 * * * * /opt/riaktant/config/fix_shards.py localhost:9200 
+17 * * * * /opt/riaktant/config/add_all_alias.py localhost:9200 1
+02 0 * * * /opt/riaktant/config/index_close2.py localhost:9200 50 67 55
